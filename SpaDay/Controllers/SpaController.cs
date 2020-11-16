@@ -12,7 +12,6 @@ namespace SpaDay.Controllers
     {
         public bool CheckSkinType(string skinType, string facialType)
         {
-
             if (facialType != "Microdermabrasion")
             {
                 if (skinType == "oily" && facialType != "Rejuvenating")
@@ -28,9 +27,7 @@ namespace SpaDay.Controllers
                     return false;
                 }
             }
-
             return true;
-
         }
 
         public IActionResult Index()
@@ -55,6 +52,12 @@ namespace SpaDay.Controllers
                     appropriateFacials.Add(facials[i]);
                 }
             }
+
+            ViewBag.name = name;
+            ViewBag.skintype = skintype;
+            ViewBag.appropriateFacials = appropriateFacials;
+            ViewBag.manipedi = manipedi;
+
             return View();
         }
 
