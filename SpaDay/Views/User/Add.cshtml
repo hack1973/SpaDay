@@ -1,0 +1,31 @@
+﻿<h1>Add User</h1>
+
+<style>
+    p.error {
+        color: red;
+    }
+</style>
+
+<form method="post">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input name="username" type="text" value="@ViewBag.username" />
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input name="email" type="email" value="@ViewBag.email" />
+    </div>
+    @if (ViewBag.error != null)
+    {
+        <p class="error">@ViewBag.error</p>
+    }
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input name="password" type="password" />
+    </div>
+    <div class="form-group">
+        <label for="verify">Verify Password</label>
+        <input name="verify" type="password" />
+    </div>
+    <input type="submit" value="Add User" />
+</form>
