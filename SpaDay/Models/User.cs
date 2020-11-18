@@ -17,6 +17,5 @@ namespace SpaDay.Models
             Email = e;
             Password = p;
         }
-
     }
 }
